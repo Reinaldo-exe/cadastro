@@ -1,6 +1,10 @@
+import 'dart:js';
 import 'package:flutter/material.dart';
+import 'package:gitest/users.dart';
+import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
+  final users = Provider.of<Users>(context);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,10 +15,12 @@ class UserList extends StatelessWidget {
           IconButton(
               icon: Icon(Icons.person_add),
               onPressed: () {
-                Navigator.of(context).pushNamed(routeName);
+                Navigator.of(context).pop();
               })
         ],
       ),
+      body: ListView.builder(
+          itemCount: users.count, itemBuilder: (ctx, i) => Text('')),
     );
   }
 }
