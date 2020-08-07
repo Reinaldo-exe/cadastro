@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gitest/pic.dart';
+import 'package:gitest/router.dart';
 import 'package:provider/provider.dart';
 import 'package:gitest/users.dart';
 import 'package:gitest/user.dart';
@@ -85,6 +87,19 @@ class UserForm extends StatelessWidget {
                 initialValue: _formData['avatarUrl'],
                 decoration: InputDecoration(labelText: "Foto"),
                 onSaved: (value) => _formData['avatarUrl'] = value,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(32),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    IconButton(
+                        icon: Icon(Icons.add_a_photo),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AppRouter.FOTO);
+                        }),
+                  ],
+                ),
               ),
             ],
           ),
