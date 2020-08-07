@@ -26,16 +26,20 @@ class _FotoPageState extends State<FotoPage> {
 
   void pegarImagemGaleria() async {
     imagemTemporaria = await ImagePicker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      imagem = imagemTemporaria;
-    });
+    setState(
+      () {
+        imagem = imagemTemporaria;
+      },
+    );
   }
 
   void pegarImagemCamera() async {
     imagemTemporaria = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
-      imagem = imagemTemporaria;
-    });
+    setState(
+      () {
+        imagem = imagemTemporaria;
+      },
+    );
   }
 
   @override
@@ -47,39 +51,42 @@ class _FotoPageState extends State<FotoPage> {
       body: Column(
         children: <Widget>[
           Expanded(
-              child: Container(
-            child: imagem != null
-                ? Image.file(imagem)
-                : Center(
-                    child: Text('Selecione uma imagem'),
-                  ),
-          )),
+            child: Container(
+              child: imagem != null
+                  ? Image.file(imagem)
+                  : Center(
+                      child: Text('Selecione uma imagem'),
+                    ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(32),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 IconButton(
-                    icon: Icon(
-                      Icons.camera_alt,
-                      size: 50,
-                      color: Colors.green,
-                    ),
-                    onPressed: () {
-                      pegarImagemCamera();
-                    }),
+                  icon: Icon(
+                    Icons.camera_alt,
+                    size: 50,
+                    color: Colors.green,
+                  ),
+                  onPressed: () {
+                    pegarImagemCamera();
+                  },
+                ),
                 SizedBox(
                   width: 60,
                 ),
                 IconButton(
-                    icon: Icon(
-                      Icons.image,
-                      size: 50,
-                      color: Colors.blue,
-                    ),
-                    onPressed: () {
-                      pegarImagemGaleria();
-                    })
+                  icon: Icon(
+                    Icons.image,
+                    size: 50,
+                    color: Colors.blue,
+                  ),
+                  onPressed: () {
+                    pegarImagemGaleria();
+                  },
+                ),
               ],
             ),
           )

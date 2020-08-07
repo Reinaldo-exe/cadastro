@@ -15,6 +15,7 @@ class UserList extends StatelessWidget {
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.person_add),
+              color: Colors.blueAccent,
               onPressed: () {
                 Navigator.of(context).pushNamed(AppRouter.FORMULARIO);
               }),

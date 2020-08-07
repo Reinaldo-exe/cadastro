@@ -25,12 +25,14 @@ class UserTile extends StatelessWidget {
           children: <Widget>[
             IconButton(
                 icon: Icon(Icons.edit),
+                color: Colors.orangeAccent,
                 onPressed: () {
                   Navigator.of(context)
                       .pushNamed(AppRouter.FORMULARIO, arguments: user);
                 }),
             IconButton(
                 icon: Icon(Icons.delete),
+                color: Colors.redAccent,
                 onPressed: () {
                   showDialog(
                       context: context,
@@ -39,6 +41,7 @@ class UserTile extends StatelessWidget {
                             content: Text("Tem certeza ?"),
                             actions: <Widget>[
                               FlatButton(
+                                color: Colors.yellow,
                                 child: Text("Sim"),
                                 onPressed: () {
                                   Provider.of<Users>(context, listen: false)
@@ -47,6 +50,7 @@ class UserTile extends StatelessWidget {
                                 },
                               ),
                               FlatButton(
+                                color: Colors.red,
                                 child: Text("Não"),
                                 onPressed: () {
                                   Navigator.of(context).pop();

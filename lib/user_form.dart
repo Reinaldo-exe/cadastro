@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gitest/pic.dart';
 import 'package:gitest/router.dart';
 import 'package:provider/provider.dart';
 import 'package:gitest/users.dart';
@@ -95,6 +94,7 @@ class UserForm extends StatelessWidget {
                   children: <Widget>[
                     IconButton(
                         icon: Icon(Icons.add_a_photo),
+                        color: Colors.redAccent,
                         onPressed: () {
                           Navigator.of(context).pushNamed(AppRouter.FOTO);
                         }),
