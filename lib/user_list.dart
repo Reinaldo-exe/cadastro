@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitest/router.dart';
 import 'package:gitest/user_tile.dart';
 import 'package:gitest/users.dart';
 import 'package:provider/provider.dart';
@@ -15,8 +16,8 @@ class UserList extends StatelessWidget {
           IconButton(
               icon: Icon(Icons.person_add),
               onPressed: () {
-                Navigator.of(context).pop();
-              })
+                Navigator.of(context).pushNamed(AppRouter.FORMULARIO);
+              }),
         ],
       ),
       body: ListView.builder(

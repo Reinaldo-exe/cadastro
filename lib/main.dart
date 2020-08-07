@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gitest/user_form.dart';
 import 'package:gitest/user_list.dart';
 import 'package:gitest/users.dart';
 import 'package:provider/provider.dart';
+import 'package:gitest/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,14 +16,16 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (ctx) => new Users(),
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: UserList(),
-      ),
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.red,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          routes: {
+            AppRouter.HOME: (ctx) => UserList(),
+            AppRouter.FORMULARIO: (ctx) => UserForm(),
+          }),
     );
   }
 }
